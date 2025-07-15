@@ -21,4 +21,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Protected Routes
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+    Route::get('/profile', function () {
+        return view('profile');
+    })->name('profile');
 });
